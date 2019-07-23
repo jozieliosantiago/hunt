@@ -11,5 +11,4 @@ Product.navigationOptions = ({ navigation }) => ({
   title: navigation.state.params.product.title,
 });
 
-
 export default Product;
