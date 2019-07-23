@@ -1,7 +1,12 @@
 import React from 'react';
 import Routes from './routes';
 import './config/StatusBarConfig';
+import { YellowBox } from 'react-native';
 // import { StyleSheet, View, Text, } from 'react-native';
+
+YellowBox.ignoreWarnings([
+    'componentWillReceiveProps'
+]);
 
 const App = () => <Routes />
 
