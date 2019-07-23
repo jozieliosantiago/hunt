@@ -11,6 +11,7 @@
     "axios": "^0.19.0",
     "react": "16.8.6",
     "react-native": "0.60.4",
+    "react-native-webview": "^5.12.1",
     "react-navigation": "2.18.3"
   },
   "devDependencies": {

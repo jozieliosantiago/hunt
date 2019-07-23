@@ -17,19 +17,19 @@ export default class Main extends Component {
     this.loadProducts();
   };
 
-  loadProducts = async ( page = 1 ) => {
+  loadProducts = async (page = 1) => {
     const response = await api.get(`/products?page=${page}`);
     const { docs, ...productInfo } = response.data;
     this.setState({
       docs: [...this.state.docs, ...docs],
       productInfo,
       page
-     });
+    });
   };
 
   loadMore = () => {
     const { page, productInfo } = this.state;
-    if ( page === productInfo.pages ) return;
+    if (page === productInfo.pages) return;
     const pageNumber = page + 1;
     this.loadProducts(pageNumber);
   };
@@ -39,7 +39,11 @@ export default class Main extends Component {
       <Text style={styles.productTitle}>{item.title}</Text>
       <Text style={styles.productDescription}>{item.description}</Text>
 
-      <TouchableOpacity style={styles.productButton} onPress={() => { }}>
+      <TouchableOpacity
+        style={styles.productButton}
+        onPress={() => {
+          this.props.navigation.navigate('Product', { product: item })
+        }}>
         <Text style={styles.productButtonText}>Acessar</Text>
       </TouchableOpacity>
     </View>
